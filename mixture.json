@@ -9,7 +9,7 @@
   "projectDescription": "Beckett Simonon shoes store.",
   "projectName": "simonon",
   "publishedId": "2595",
-  "serverHostname": "localhost",
+  "serverHostname": null,
   "serverPort": null,
   "simpleModePartnerServer": null,
   "templateDefaultLayout": "theme",

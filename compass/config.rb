@@ -1,7 +1,7 @@
 # Compass configuration file.
 
 # We also support plugins and frameworks, please read the docs http://docs.mixture.io/preprocessors#compass
-project_path = "/Users/Hugo/Dropbox/Mixture/Beckett Simonon/"
+project_path = "/Users/administrador/Documents/Aptana Studio 3 Workspace/Beckett-Simonon/"
 
 # Important! change the paths below to match your project setup
 
