@@ -1,0 +1,108 @@
+@import 'compass/css3';
+
+@mixin nclearfix {
+   &:after{
+    content: '';
+    display: table;
+    clear: both;
+    }
+}
+
+
+a{
+  &.label{
+    padding:2px 23px;
+    &:hover{
+      color: #fff;
+    }
+  }
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+
+.button.secondary:hover, .button.secondary:focus{
+  background: #164D7B;
+  border-color:#164D7B;
+  }
+
+.button{
+  padding:7px 30px;
+  -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0) inset;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0) inset;
+  &.prefix{
+    line-height: 1;
+    @include border-right-radius(6px);
+    @include border-left-radius(0px);
+  }
+  &.white{
+    background-color: #fff;
+    border-color: darken(#DBC0B9, 20%);
+  }
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea{
+  height: 35px;
+  @include border-radius(6px);
+}
+
+.breadcrumbs{
+  padding-left: 0;
+  li{
+    a{
+      letter-spacing: 1px;
+    }
+    &.current{
+      a{
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.section-container{
+  &.tabs{
+    section{
+      &.section{
+        .content{
+          padding-left: 0;
+          padding-right: 0;
+          p{
+            font-weight: 600;
+            font-size: 13px;
+          }
+        }
+        p.title{
+          top: 0;
+          line-height: 0;
+          margin-left: 0;
+          margin-right: 10px;
+          display: inline-block;
+          @include border-radius(25px);
+          a{
+            font-size: 10px;
+            &:hover{
+              text-decoration: none;
+            }
+          }
+        }
+        &.active{
+          p.title{
+            a{
+              color: #fff;
+              margin-left: 0;
+            }
+          }
+        } 
+      }
+    }
+  }
+}
+
+.top-bar-section ul{
+  @include nclearfix;
+}

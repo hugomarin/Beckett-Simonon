@@ -1,0 +1,114 @@
+{% block content %}
+	<div class="row">
+		<div class="twelve columns">
+			<ul class="breadcrumbs">
+			  <li><a href="#">Home</a></li>
+			  <li><a href="#">View all Products</a></li>
+			  <li class="current"><a href="#">Bailey Chukka Boot</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<h3 class="thetitle">Bailey Chukka Boot</h3>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="large-4 columns">
+			<div class="section-container tabs" data-section="tabs">
+			  <section class="section">
+			    <p class="title"><a href="#">INFO</a></p>
+			    <div class="content">
+			    	{{ product.description }}
+			      <p>As a well-dressed gentleman, you know a pair of handsome chukka boots are a must. A little chunkier than average, the Bailey's are the quintessential all-season boots.</p>
+				  <p>Want to step it up? Wear them with a perfectly fitted plaid jacket and a sleek shirt, as stylish as masculine, this is the modern picture of a cool man. Try them out, and you will see heads turning your way.</p>
+			    </div>
+			  </section>
+			  <section class="section">
+			    <p class="title"><a href="#">SPECIFICATIONS</a></p>
+			    <div class="content">
+			      <p><strong><span style="color: #666666;">Runs Big. If you regularly wear a half size, we recommend buying the nearest whole size down. Check our&nbsp;</span><a href="http://www.beckettsimonon.com/pages/size-guide"><span style="color: #0b5394;">size guide</span></a>.</strong><br> Nubuck leather upper.<br> Full leather lining.<br> Waxed cotton laces.<br> Tonal top-stitch detail.<br> Full-grain leather trim in the rear.<br> 3 eyelet vamp.<br> Rounded toe.<br> Stacked heel with durable rubber sole.<br> Includes a branded dust bag.<br> Heel height: 1.1"<br> Width: Medium (D)<br> Color: Camel.<br> Origin: South America.</p>
+			    </div>
+			  </section>
+			</div>
+			{% comment %} {{ if product.images.size > 1  }} {% endcomment %}
+			<div class="thumbs">
+				<div class="image">
+				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_grande.jpeg?761', tint: '#ffffff'">
+				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_small.jpeg?761" alt="Bailey Chukka Boot">
+				  </a>
+				</div>
+				<div class="image">
+				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4855_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4855_grande.jpeg?761', tint: '#ffffff'">
+				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4855_small.jpeg?761" alt="Bailey Chukka Boot">
+				  </a>
+				</div>
+				<div class="image">
+				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4905_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4905_grande.jpeg?761', tint: '#ffffff'">
+				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4905_small.jpeg?761" alt="Bailey Chukka Boot">
+				  </a>
+				</div>
+				<div class="image">
+				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4947_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4947_grande.jpeg?761', tint: '#ffffff'">
+				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4947_small.jpeg?761" alt="Bailey Chukka Boot">
+				  </a>
+				</div>
+			</div>
+			  {% comment %} {{ endif }}  {% endcomment %}
+			<br />
+			<h5>More items to consider</h5>
+			<div recomatic="product" shop="erdman-emard-and-schumm3213.myshopify.com" product_id="129559735"></div>
+		</div>
+		<div class="large-5 columns">
+			<img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_1024x1024.jpeg?761" alt="" />
+		</div>
+		<div class="large-3 columns">
+			<div class="buy-box">
+				<div class="purchase">
+					<h3 class="price">$79.00</h3>
+					<h6 class="label upper x-bold">-Free shipping-</h6>
+				</div>
+				<form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
+					<div class="product-options">
+						<select>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+						</select>
+						<span class="upper small"><a href="/pages/size-guide" title="Size Guide">Size Guide</a></span>
+						<input type="submit" class="button secondary radius upper" name="add" value="Add to cart">
+					</div>
+				</form>
+			</div>
+			<div class="social">
+				<div class="row">
+					<div class="large-5 columns">
+						<div class="pinterest">
+							<a href="http://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'large' }}" class="pin-it-button" count-layout="horizontal">Pin It</a>
+							<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
+						</div>
+					</div>
+					<div class="large-7 columns">
+						<div class="facebook-like">
+							<iframe src="//www.facebook.com/plugins/like.php?href={{ shop.url }}{{ product.url }}&amp;send=false&amp;layout=button_count&amp;width=80&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:auto; height:21px;" allowTransparency="true"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+		</div>
+	</div>
+{% endblock %}
