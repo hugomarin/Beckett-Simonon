@@ -6,8 +6,11 @@ $x-small: "only screen and (min-width:"#{$x-small-screen}")";
 
 @media #{$x-small} {
 	
+	/*top-nav*/
 	.top-bar { background-color: #fff; margin:0;}
 	
+	
+	/*footer*/
 	.footer-wrapper .first {
 		width: 100%;
 		ul {width: 100%;
@@ -26,8 +29,6 @@ $x-small: "only screen and (min-width:"#{$x-small-screen}")";
 		width: 100%;
 	}
 	
-	
-	/*index*/
 	.spot-1 {
 		margin: 1em 0 3em;
 	}
