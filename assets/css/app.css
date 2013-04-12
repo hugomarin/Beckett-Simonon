@@ -4692,6 +4692,7 @@ table tfoot tr td {
 
 @media only screen and (min-width: 20em) {
   .top-bar {
-    background-color: #5d5d35;
+    background-color: #ddd;
+    margin: 0;
   }
 }

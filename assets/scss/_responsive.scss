@@ -4,6 +4,9 @@ $x-small: "only screen and (min-width:"#{$x-small-screen}")";
 
 @media #{$x-small} {
 		.top-bar {
-		background-color: #5d5d35;}
+		background-color: #ddd;
+		margin:0;
+		}
+		
 	}
 
