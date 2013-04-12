@@ -8,18 +8,29 @@
     width: 100%;
   }
   .footer-wrapper .first ul {
-    background-color: #f1f1c8;
+    width: 100%;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
   }
   .footer-wrapper .first ul li {
     width: 50%;
-    background-color: #000;
   }
 
   .footer-wrapper .middle {
     width: 100%;
+    border-right-width: 0;
+    border-left-width: 0;
   }
 
   .footer-wrapper .last {
     width: 100%;
+  }
+
+  /*index*/
+  .spot-1 {
+    margin: 1em 0 3em;
   }
 }
