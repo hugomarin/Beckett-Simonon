@@ -12,6 +12,10 @@
 a{
   &.label{
     padding:2px 23px;
+    &.light{
+      background-color: #EDECED;
+      color: #000;
+    }
     &:hover{
       color: #fff;
     }
@@ -74,6 +78,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
           p{
             font-weight: 600;
             font-size: 13px;
+            margin-bottom: 0;
           }
         }
         p.title{

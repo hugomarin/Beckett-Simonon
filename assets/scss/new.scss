@@ -593,3 +593,10 @@ h3.thetitle{
 .create-space{
   @include lspace($st: 80px, $s:0);
 }
+
+.more-options{
+  @include lspace($st: 30px, $s:0);
+  a{
+    margin: 0 10px;
+  }
+}

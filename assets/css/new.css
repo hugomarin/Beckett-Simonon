@@ -573,3 +573,10 @@ h3.thetitle {
 .create-space {
   padding: 80px 0;
 }
+
+.more-options {
+  padding: 30px 0;
+}
+.more-options a {
+  margin: 0 10px;
+}

@@ -1,6 +1,10 @@
 a.label {
   padding: 2px 23px;
 }
+a.label.light {
+  background-color: #EDECED;
+  color: #000;
+}
 a.label:hover {
   color: #fff;
 }
@@ -67,6 +71,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 .section-container.tabs section.section .content p {
   font-weight: 600;
   font-size: 13px;
+  margin-bottom: 0;
 }
 .section-container.tabs section.section p.title {
   top: 0;
