@@ -162,37 +162,8 @@ ul.panoramic li {
   margin-bottom: 30px;
 }
 
-.nav-bar li.dropdown a {
-  background: url(http://cdn.shopify.com/s/files/1/0175/8496/t/2/assets/arrow-dark.png?3309) no-repeat right center;
-  padding: 20px;
-}
-.nav-bar li.dropdown ul {
-  background: #FBFBFB;
-  margin-left: 0;
-  padding: 5px 15px;
-  border: 1px solid #FFF;
-  -webkit-box-shadow: rgba(50, 50, 50, 0.2) 0px 1px 3px;
-  -moz-box-shadow: rgba(50, 50, 50, 0.2) 0px 1px 3px;
-  box-shadow: rgba(50, 50, 50, 0.2) 0px 1px 3px;
-}
-.nav-bar li.dropdown ul li {
-  float: none;
-  display: block;
-  padding: 0;
-}
-.nav-bar li.dropdown ul li a {
-  font-size: 13px;
-  color: #313131;
-  background: none;
-}
-.nav-bar li a {
-  font-weight: bold;
-  font-size: 16px;
-  font-family: Lato;
-}
-.nav-bar li a:hover {
-  color: #d04c41;
-  text-decoration: none;
+.top-bar {
+  margin-bottom: 0;
 }
 
 .first-banner {

@@ -35,10 +35,10 @@
 <body>
   <div class="toolbar-wrapper fixed">
 	<div class="row">
-		<div class="large-3 columns">
+		<div class="large-3 columns hide-for-small">
 			<a class="label round upper small x-bold" id="buttonmodal" href="#">Join our newsletter and save 10%</a> 
 		</div>
-		<div class="large-6 columns text-center">
+		<div class="large-6 columns text-center hide-for-small">
 			<p class="small upper text-center">beautifully designed men's shoes.  Free Shipping and Returns.</p>
 		</div>
 		<div class="large-3 columns">
@@ -51,31 +51,44 @@
 	</div>
   </div>
   <div class="row logo">
-		<div class="large-4 columns large-centered"><img src="http://cdn.shopify.com/s/files/1/0116/7992/t/5/assets/logo.png?752" alt="" /></div>
+		<div class="large-4 columns large-centered hide-for-small"><img src="http://cdn.shopify.com/s/files/1/0116/7992/t/5/assets/logo.png?752" alt="" /></div>
   </div>
 	
   <div class="row">
-		<div class="large-8 columns large-centered">
-			<ul class="nav-bar panoramic s10">
-				<li class="dropdown"><a href="#">SHOP</a>
-					<ul>
-						<li><a href="#">Domingo</a></li>
-						<li><a href="#">Otro</a></li>
-					</ul>
-				</li>
-				<li><a href="#">ABOUT</a></li>
-				<li class="dropdown"><a href="#">CUSTOM SERVICE</a>
-					<ul>
-						<li><a href="/pages/faq" class="current">FAQ</a></li>
-						<li><a href="/pages/shipping-returns">Shipping &amp; Returns</a></li>
-						<li><a href="/pages/size-guide">Size Guide</a></li>
-					</ul>
-				</li>
-				<li><a href="#">CONTACT</a></li>
-				<li><a href="#">BLOG</a></li>
-			</ul>
-		</div>
-  </div>
+		<nav class="top-bar">
+			<ul class="title-area hide-for-large">
+			    <li class="name">
+			      <h1><a href="#">Beckett Simonon</a></h1>
+			    </li>
+			    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+			 </ul>
+		
+		
+			<section class="top-bar-section">
+				<ul>
+					<li class="has-dropdown"><a href="#">SHOP</a>
+						 <ul class="dropdown">
+							<li><a href="#">Domingo</a></li>
+							<li><a href="#">Otro</a></li>
+						</ul>
+					</li>
+					
+					<li><a href="#">ABOUT</a></li>
+					
+					<li class="has-dropdown"><a href="#">CUSTOM SERVICE</a>
+						<ul class="dropdown">
+							<li><a href="/pages/faq" class="current">FAQ</a></li>
+							<li><a href="/pages/shipping-returns">Shipping &amp; Returns</a></li>
+							<li><a href="/pages/size-guide">Size Guide</a></li>
+						</ul>
+					</li>
+					<li><a href="#">CONTACT</a></li>
+					<li><a href="#">BLOG</a></li>
+				</ul>
+			</section>
+			
+		</nav><!--/top-bar-->
+  </div><!--/row-->
 		
   {% block content %}{% endblock %}
   <div class="footer-wrapper">
