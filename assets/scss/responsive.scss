@@ -1,31 +1,35 @@
-
+@import "compass/css3";
 
 $x-small-screen: emCalc(320px);
 
 $x-small: "only screen and (min-width:"#{$x-small-screen}")";
 
 @media #{$x-small} {
+	
 	.top-bar { background-color: #fff; margin:0;}
 	
 	.footer-wrapper .first {
 		width: 100%;
-		ul {
-		
-		background-color: #f1f1c8;
-		
-		
-			li {width: 50%; background-color: #000;
-		}
-		
-		}
+		ul {width: 100%;
+			@include column-count(2);
+			li {width: 50%;}
+			}
 	}
 	
 	.footer-wrapper .middle {
 		width: 100%;
+		border-right-width: 0;
+		border-left-width: 0;
 	}
 	
 	.footer-wrapper .last {
 		width: 100%;
+	}
+	
+	
+	/*index*/
+	.spot-1 {
+		margin: 1em 0 3em;
 	}
 		
 }
