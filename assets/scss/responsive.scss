@@ -1,0 +1,32 @@
+
+
+$x-small-screen: emCalc(320px);
+
+$x-small: "only screen and (min-width:"#{$x-small-screen}")";
+
+@media #{$x-small} {
+	.top-bar { background-color: #fff; margin:0;}
+	
+	.footer-wrapper .first {
+		width: 100%;
+		ul {
+		
+		background-color: #f1f1c8;
+		
+		
+			li {width: 50%; background-color: #000;
+		}
+		
+		}
+	}
+	
+	.footer-wrapper .middle {
+		width: 100%;
+	}
+	
+	.footer-wrapper .last {
+		width: 100%;
+	}
+		
+}
+
