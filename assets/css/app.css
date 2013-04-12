@@ -4692,7 +4692,26 @@ table tfoot tr td {
 
 @media only screen and (min-width: 20em) {
   .top-bar {
-    background-color: #ddd;
+    background-color: #fff;
     margin: 0;
+  }
+
+  .footer-wrapper .first {
+    width: 100%;
+  }
+  .footer-wrapper .first ul {
+    background-color: #f1f1c8;
+  }
+  .footer-wrapper .first ul li {
+    width: 50%;
+    background-color: #000;
+  }
+
+  .footer-wrapper .middle {
+    width: 100%;
+  }
+
+  .footer-wrapper .last {
+    width: 100%;
   }
 }
