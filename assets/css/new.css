@@ -399,6 +399,7 @@ hr.image {
   width: 32px;
   height: 32px;
   text-indent: -9999px;
+  display: inline-block;
   background: url(http://cdn.shopify.com/s/files/1/0116/7992/t/5/assets/social.png?614) no-repeat;
 }
 
@@ -416,6 +417,18 @@ hr.image {
 
 .icon-social.pinterest {
   background-position: -125px 0;
+}
+
+.share {
+  width: 69%;
+  display: block;
+  margin: 0 auto;
+}
+.share li {
+  margin: 2%;
+}
+.share li span {
+  line-height: 2.4;
 }
 
 /* Size filter */
@@ -491,7 +504,7 @@ ul.clan {
   min-height: 80px;
 }
 .purchase h3.price {
-  margin: 6px 0;
+  margin: 25px 0 4px 0;
 }
 .purchase h6 {
   font-size: 11px;
