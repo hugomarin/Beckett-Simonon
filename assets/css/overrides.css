@@ -37,6 +37,9 @@ a:hover {
   -webkit-border-bottom-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+.button.full {
+  width: 100%;
+}
 .button.white {
   background-color: #fff;
   border-color: #b88376;

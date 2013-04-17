@@ -40,6 +40,9 @@ a{
     @include border-right-radius(6px);
     @include border-left-radius(0px);
   }
+  &.full{
+    width: 100%;
+  }
   &.white{
     background-color: #fff;
     border-color: darken(#DBC0B9, 20%);
