@@ -68,7 +68,6 @@
 					<h3 class="price">{{ product.price_min | money }}{% if product.price_min < product.compare_at_price_min %} <del>{{ product.compare_at_price_min | money }}</del>{% endif %}</h3>
 					<h6 class="label upper x-bold">-Free shipping-</h6>
 				</div>
-				<h6 class="upper">select size</h6>
 				<form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
 					<div class="product-options">
 						{% if product.options.size > 1 %}
@@ -109,6 +108,7 @@
 			
 			{% if settings.show_social %}
 			<div class="social">
+<<<<<<< HEAD
 				<ul class="panoramic share">
 					<li>
 						<span>SHARE:</span>
@@ -122,12 +122,41 @@
 				</ul>
 			</div>
 			{% endif %}
+=======
+				<div class="row">
+					<div class="large-5 columns">
+						<div class="pinterest">
+							<a href="http://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'large' }}" class="pin-it-button" count-layout="horizontal">Pin It</a>
+							<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
+						</div>
+					</div>
+					<div class="large-7 columns">
+						<div class="facebook-like">
+							<iframe src="//www.facebook.com/plugins/like.php?href={{ shop.url }}{{ product.url }}&amp;send=false&amp;layout=button_count&amp;width=80&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:auto; height:21px;" allowTransparency="true"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+>>>>>>> 65d7fd8cd808e94ba1af4a926a85086cf37d56cb
 		</div>
 		<div class="row">
 			<div class="large-12 columns">
 				<div class="more-options">
+<<<<<<< HEAD
 					<a class="upper label round">More items to consider</a><a class="upper label light round"> read reviews</a>
 					<div recomatic="product" shop="{{shop.permanent_domain}}" product_id="{{product.id}}">
+=======
+					<!-- TODO: acabar de pulir more-optione -->
+					<a class="upper label round">More items to consider</a><a class="upper label light round"> read reviews</a>
+					<div recomatic="product" shop="erdman-emard-and-schumm3213.myshopify.com" product_id="129559735"></div>
+>>>>>>> 65d7fd8cd808e94ba1af4a926a85086cf37d56cb
 				</div>
 			</div>
 		</div>

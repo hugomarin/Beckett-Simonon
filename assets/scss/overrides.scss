@@ -15,16 +15,12 @@ a{
     &.light{
       background-color: #EDECED;
       color: #000;
-      &:hover{
-        color: #000;
-      }
     }
     &:hover{
       color: #fff;
-      text-decoration: none;
     }
   }
-  &:hover{
+    &:hover{
     text-decoration: underline;
   }
 }
