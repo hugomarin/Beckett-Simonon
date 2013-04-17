@@ -92,13 +92,13 @@
 					<li class="text-center">
 						<h6 class="label text-center upper">- Free SHIPPING AND RETURNS -</h6>
 						<div class="graybox">
-							<img class="full" src="http://cdn.shopify.com/s/files/1/0116/7992/t/5/assets/free2x.jpg?761" alt="" />
+							{{ 'free2x.jpg' | asset_url | img_tag: 'Free SHIPPING AND RETURNS' }}
 						</div>
 					</li>
 					<li class="text-center">
 						<h6 class="label text-center upper">- THE SHOES YOU ALWAYS WANTED -</h6>
 						<div class="graybox">
-							<img src="http://cdn.shopify.com/s/files/1/0116/7992/t/5/assets/shoe2x.jpg?761" alt="" />
+							{{ 'shoe2x.jpg' | asset_url | img_tag: 'THE SHOES YOU ALWAYS WANTED' }}
 						</div>
 					</li>
 					<li class="text-center">
@@ -107,9 +107,9 @@
 							<div class="features">
 								<h3 class="x-bold black">Join us and get 10% off.</h3>
 								<p>You will receive promo-codes, updates, lots of style tips and<br> <strong>10% off your first order.</strong></p>
-								<form action="http://beckettsimonon.createsend.com/t/t/s/vkj/" method="post" id="subForm">
+								<form action="{{ settings.mailing_list_form_action }}" method="post" id="subForm">
 							        <input type="text" class="radius" name="cm-vkj-vkj" id="vkj-vkj" placeholder="Your email...">
-							        <input type="submit" class="button secondary radius no-margin upper" value="JOIN and get 10% OFF code">
+									<input type="submit" class="button secondary radius no-margin upper" value="JOIN and get 10% OFF code">
 								</form>
 							</div>
 						</div>
@@ -131,10 +131,10 @@
 			
 		<div class="row">
 			<div class="large-6 columns">
-				<a href="http://www.beckettsimonon.com/" class="pop-post"><img src="http://cdn.shopify.com/s/files/1/0116/7992/t/5/assets/post-img-1.jpg?761" alt="Post Articule"></a>
+				<a href="{{ settings.post_link_1 }}" class="pop-post">{{ 'post-img-1.jpg' | asset_url | img_tag: "Post Articule" }}</a>
 			</div>
 			<div class="large-6 columns">
-				<a href="http://www.beckettsimonon.com/" class="pop-post"><img src="http://cdn.shopify.com/s/files/1/0116/7992/t/5/assets/post-img-2.jpg?761" alt="Post Articule"></a>
+				<a href="{{ settings.post_link_2 }}" class="pop-post">{{ 'post-img-2.jpg' | asset_url | img_tag: "Post Articule"  }}</a>
 			</div>
 		</div><!--/row-->
 		<br />

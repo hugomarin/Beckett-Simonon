@@ -1,8 +1,9 @@
-@media only screen and (min-width: emCalc(320px)) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   /*top-nav*/
   .top-bar {
     background-color: #fff;
     margin: 0;
+    width: 100%;
   }
 
   /*footer*/

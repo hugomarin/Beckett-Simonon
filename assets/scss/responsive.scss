@@ -1,13 +1,14 @@
 @import "compass/css3";
 
-$x-small-screen: emCalc(320px);
+$x-small-screen: 320px; 
+$x-small-screen2: 480px; 
 
-$x-small: "only screen and (min-width:"#{$x-small-screen}")";
+$x-small: "only screen and (min-width:"#{$x-small-screen}") and (max-width : "#{$x-small-screen2}")"; 
 
 @media #{$x-small} {
 	
 	/*top-nav*/
-	.top-bar { background-color: #fff; margin:0;}
+	.top-bar { background-color: #fff; margin:0; width: 100%; }
 	
 	
 	/*footer*/

@@ -375,8 +375,8 @@ hr{
     display: inline-block;
     @include box-sizing(border-box);
     ul{
-      float: left;
-      width: 33%;
+      margin-right: 5px;
+      @include column-count(3);
       li{
         a{
           font-size: 11px;
@@ -610,4 +610,8 @@ h3.thetitle{
   a{
     margin: 0 10px;
   }
+}
+
+.feature-list{
+  margin-top: 30px;
 }

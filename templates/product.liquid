@@ -11,7 +11,7 @@
 	
 	<div class="row">
 		<div class="large-12 columns">
-			<h3 class="thetitle">Bailey Chukka Boot</h3>
+			<h3 class="thetitle">{{ product.title }}</h3>
 		</div>
 	</div>
 	
@@ -22,8 +22,6 @@
 			    <p class="title"><a href="#">INFO</a></p>
 			    <div class="content">
 			    	{{ product.description }}
-			      <p>As a well-dressed gentleman, you know a pair of handsome chukka boots are a must. A little chunkier than average, the Bailey's are the quintessential all-season boots.</p>
-				  <p>Want to step it up? Wear them with a perfectly fitted plaid jacket and a sleek shirt, as stylish as masculine, this is the modern picture of a cool man. Try them out, and you will see heads turning your way.</p>
 			    </div>
 			  </section>
 			  <section class="section">
@@ -33,71 +31,84 @@
 			    </div>
 			  </section>
 			</div>
-			{% comment %} {{ if product.images.size > 1  }} {% endcomment %}
+			{% if product.images.size > 1 %}
 			<div class="thumbs">
+				{% for image in product.images %}
+				{% if settings.enable_product_image_zoom %}
 				<div class="image">
-				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_grande.jpeg?761', tint: '#ffffff'">
-				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_small.jpeg?761" alt="Bailey Chukka Boot">
+				  <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'grande' }}', tint: '#ffffff'">
+				    <img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}">
 				  </a>
 				</div>
+				{% else %}
 				<div class="image">
-				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4855_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4855_grande.jpeg?761', tint: '#ffffff'">
-				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4855_small.jpeg?761" alt="Bailey Chukka Boot">
+				  <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
+				    <img src="{{ image | product_img_url: 'compact' }}" alt="{{ image.alt | escape }}" />
 				  </a>
 				</div>
-				<div class="image">
-				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4905_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4905_grande.jpeg?761', tint: '#ffffff'">
-				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4905_small.jpeg?761" alt="Bailey Chukka Boot">
-				  </a>
-				</div>
-				<div class="image">
-				  <a href="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4947_1024x1024.jpeg?761" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: 'http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4947_grande.jpeg?761', tint: '#ffffff'">
-				    <img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4947_small.jpeg?761" alt="Bailey Chukka Boot">
-				  </a>
-				</div>
+				{% endif %}
+				{% endfor %}
 			</div>
-			  {% comment %} {{ endif }}  {% endcomment %}
+			  	{% endif %}
 		</div>
 		<div class="large-6 columns">
-			<img src="http://cdn.shopify.com/s/files/1/0116/7992/products/DSC_4950_1024x1024.jpeg?761" alt="" />
+			{% if settings.enable_product_image_zoom %}
+			<a href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position: 'inside', showTitle: 'false'" id="placeholder">
+			  <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+			</a>
+			{% else %}
+			<a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="placeholder">
+			  <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+			</a>
+			{% endif %}
 		</div>
 		<div class="large-3 columns">
 			<div class="buy-box">
 				<div class="purchase">
-					<h3 class="price">$79.00</h3>
+					<h3 class="price">{{ product.price_min | money }}{% if product.price_min < product.compare_at_price_min %} <del>{{ product.compare_at_price_min | money }}</del>{% endif %}</h3>
 					<h6 class="label upper x-bold">-Free shipping-</h6>
 				</div>
 				<h6 class="upper">select size</h6>
 				<form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
 					<div class="product-options">
-						<select>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-							<option value="13">13</option>
+						{% if product.options.size > 1 %}
+						<select id="product-select" name='id'>
+							{% for variant in product.variants %}
+								<option value="">Select Size</option>
+								<option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+							{% endfor %}
+						</select>
+						{% elsif product.options.size == 1 and product.variants.size > 1 %}
+						<!-- <label>{{ product.options[0] }}</label>-->
+						<select id="product-select" name='id'>
+						    {% for variant in product.variants %}
+						    <option value="">Select Size</option>
+						    <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+						    {% endfor %}
 						</select>
 						<span class="upper small"><a href="/pages/size-guide" title="Size Guide">Size Guide</a></span>
-						<input type="submit" class="button secondary radius upper" name="add" value="Add to cart">
+						
+						{% else %}
+							<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+						{% endif %}
+						
+						{% if settings.display_quantity_dropdown %}
+						<div class="selector-wrapper">
+						  <label>Quantity</label>
+						  <textarea name="quantity" value="1" placeholder="1"></textarea>
+						</div>
+						{% endif %}
+						{% unless product.available %}
+					    	<p>Sold Out</p>
+					    {% else %}
+							<input type="submit" class="button secondary radius upper" name="add" value="Add to cart">
+						{% endunless %}
 					</div>
 				</form>
 			</div>
+			
+			{% if settings.show_social %}
 			<div class="social">
-				<!-- <div class="row">
-					<div class="large-5 columns">
-						<div class="pinterest">
-							<a href="http://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'large' }}" class="pin-it-button" count-layout="horizontal">Pin It</a>
-							<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
-						</div>
-					</div>
-					<div class="large-7 columns">
-						<div class="facebook-like">
-							<iframe src="//www.facebook.com/plugins/like.php?href={{ shop.url }}{{ product.url }}&amp;send=false&amp;layout=button_count&amp;width=80&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:auto; height:21px;" allowTransparency="true"></iframe>
-						</div>
-					</div>
-				</div> -->
 				<ul class="panoramic share">
 					<li>
 						<span>SHARE:</span>
@@ -110,19 +121,13 @@
 					</li>
 				</ul>
 			</div>
-			<script type="text/javascript">
-			  // (function() {
-			    // var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			    // po.src = 'https://apis.google.com/js/plusone.js';
-			    // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-			  // })();
-			</script>
+			{% endif %}
 		</div>
 		<div class="row">
 			<div class="large-12 columns">
 				<div class="more-options">
-					<!-- TODO: acabar de pulir more-options -->
 					<a class="upper label round">More items to consider</a><a class="upper label light round"> read reviews</a>
+					<div recomatic="product" shop="{{shop.permanent_domain}}" product_id="{{product.id}}">
 				</div>
 			</div>
 		</div>

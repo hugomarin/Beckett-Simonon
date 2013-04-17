@@ -100,8 +100,34 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   margin-left: 0;
 }
 
+.top-bar {
+  width: 50%;
+  margin: 0 auto;
+}
+.top-bar ul li a:hover {
+  background: transparent;
+}
+.top-bar ul li:hover a {
+  color: #D04C41;
+}
+.top-bar ul.dropdown {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.top-bar ul.dropdown li a {
+  background: #fbfbfb;
+}
+
 .top-bar-section ul:after {
   content: '';
   display: table;
   clear: both;
+}
+.top-bar-section ul li a {
+  text-transform: uppercase;
+}
+
+.top-bar-section li a:not(.button):hover {
+  background: #fbfbfb;
 }

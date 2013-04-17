@@ -112,6 +112,43 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   }
 }
 
+.top-bar{
+  width: 50%;
+  margin:0 auto;
+  ul{
+    li{
+      a{
+         &:hover{
+         background: transparent; 
+        }
+      }
+      &:hover{
+        a{
+          color: #D04C41;
+        }
+      }
+    }
+  }
+  ul.dropdown{
+    @include box-shadow(0 1px 3px rgba(0,0,0,.2));
+    li{
+      a{
+        background: rgb(251, 251, 251); 
+        
+      }
+    }
+  }
+}
+
 .top-bar-section ul{
   @include nclearfix;
+  li{
+    a{
+      text-transform: uppercase;
+    }
+  }
+}
+
+.top-bar-section li a:not(.button):hover{
+  background: rgb(251,251,251);
 }

@@ -342,8 +342,12 @@ hr.image {
   box-sizing: border-box;
 }
 .footer-wrapper .first ul {
-  float: left;
-  width: 33%;
+  margin-right: 5px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  -ms-column-count: 3;
+  -o-column-count: 3;
+  column-count: 3;
 }
 .footer-wrapper .first ul li a {
   font-size: 11px;
@@ -592,4 +596,8 @@ h3.thetitle {
 }
 .more-options a {
   margin: 0 10px;
+}
+
+.feature-list {
+  margin-top: 30px;
 }
