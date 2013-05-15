@@ -111,7 +111,7 @@ ul{
   &.panoramic{
     &.four-up{
       li{
-        width: 25%;
+        width: 24.7%;   
       }
     }
     li{
@@ -207,13 +207,11 @@ $c:10;
       margin: 0;
     }
     a{
-      color: #DBC0B9;
+      color: #fff;
+      border-color: #fff;
+      text-transform: uppercase;
       &:hover{
-        border-color: #fff;
-        background-color: #D9C0BB;
-        color: #fff;
         font-weight: 900;
-        text-transform: uppercase;
       }
     }
   }
@@ -327,8 +325,10 @@ $c:10;
 .graybox{
   background: #EDECEC;
   border: 5px solid #E3E2E2;
-  min-height: 200px;
   margin-top: 20px;
+  img{
+    display: block;
+  }
   .features{
     @include lspace($st:15px);
     p{
@@ -337,6 +337,19 @@ $c:10;
     }
   }
 }
+
+h1.off{
+      line-height: .8;
+      font-size: 45px;
+    }
+h5.off{
+  margin-bottom: 9px;
+}
+
+.first-text{
+  display: none;
+}
+
 
 hr{
   &.image{
@@ -370,12 +383,12 @@ hr{
   }
   .first{
     float: left;
-    width: 39%; 
+    width: 39%;
     display: inline-block;
     @include box-sizing(border-box);
     ul{
       margin-right: 5px;
-      @include column-count(3);
+      @include column-count(2);
       li{
         a{
           font-size: 11px;
@@ -393,7 +406,7 @@ hr{
     ul{
       margin: 0 auto;
       display: block;
-      width: 78%;
+      width: 57% ;
       li{
         margin: 2%;
         a{
@@ -451,10 +464,12 @@ ul.clan {
     background: #efefef;
     @include border-radius(5px);
     margin-bottom: 0;
+    max-width: 400px;
+    float: right;
 }
 .clan  li  {
     list-style: none; 
-    margin-right: 10px;
+    margin-right: 8px;
     display: inline;  
     color: #404041
 }
@@ -464,23 +479,16 @@ ul.clan {
     border-color: rgb(152,152,152)  ;
     font-size: 7.5px; 
     font-weight: bold; 
-    padding: 0 9px;
-    color: #404041
+    padding: 0 6px;  
+    color: #404041;
+    background-color: #fff; 
 }
 .clan li a:hover, .clan li a.active {
     color: #fff;
     background: #000;
     font-weight: bold;
 }
-.clan  li a.current {
-    padding: 0 1px;
-}
-.clan  li a.vv_b {
-    padding: 0 4px;
-}
-.clan  li a.vv_c {
-    padding: 0 6px;
-}
+
 
 .buy-box{
   background-color: #EDECED;
@@ -488,8 +496,9 @@ ul.clan {
   float: right;
   @include border-radius(8px);
   text-align: center;
-  width: 85%; 
+  width: 100%;
   margin-bottom: 20px;
+  max-width: 180px;
 }
 
 .purchase{
@@ -516,9 +525,12 @@ ul.clan {
     }
   }
   input[type="submit"]{
+    padding: 8px 17px; 
+    display: block;
+    width: 84%; 
+    margin: 0 auto; 
     margin-top: 40px;
-    margin-bottom: 5px;
-    padding: 8px 20px;
+    margin-bottom: 5px; 
   }
 }
 
@@ -602,4 +614,50 @@ h3.thetitle{
 
 .feature-list{
   margin-top: 30px;
+}
+
+.tabs{
+  height: 30px;
+  margin-top: 20px;
+  li{
+    a{
+    margin-bottom: 3px;
+    padding: 0px 23px; 
+    background: #000;
+    text-transform: uppercase;
+    @include border-radius(25px);
+    float: left;
+    display: inline-block;
+    margin-right: 5px; 
+    @include transition-property(background);
+    @include transition-duration(.5s); 
+    color: #fff;
+    font-size: 11px;
+    &.active{
+      background: rgb(236, 236, 236);
+      color: #000;
+    }
+  }
+}
+}
+
+.tabs-content{
+  li{
+    &#tab2{
+      display: none;
+    }
+  }
+}
+
+.getall{
+  width: 100%;
+  display: block;
+}
+
+#wrap{
+  a{
+    img{
+      max-width: 510px;
+    } 
+  }
 }

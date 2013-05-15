@@ -1,55 +1,49 @@
-{% block content %}
-	<div class="row">
-		<div class="twelve columns">
+<div class="row">
+    	<div class="twelve columns">
 			<ul class="breadcrumbs">
-			  <li><a href="/">Home</a></li>
-			  <li><a href="#">View all Products</a></li>
-			  <li class="current"><a href="#">Bailey Chukka Boot</a></li>
+			  <li><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url">Home</a></li>
+              {% if collection %}
+              <li><a href="{{ collection.url }}" title="{{ collection.title | escape }}">{{ collection.title }}</a></li>
+    	      {% else %}
+    	       <li><a href="/collections/all" title="All Products">Products</a><li>
+    	      {% endif %}
+			  <li class="current"><a href="#">{{ product.title }}</a></li>
 			</ul>
 		</div>
 	</div>
-	
-	<div class="row">
-		<div class="large-12 columns">
-			<h3 class="thetitle">{{ product.title }}</h3>
-		</div>
+    
+<div class="row">
+	<div class="large-12 columns">
+		<h3 class="thetitle">{{ product.title }}</h3> 
 	</div>
-	
-	<div class="row">
+</div>    
+
+    <div class="row">
 		<div class="large-3 columns">
-			<div class="section-container tabs" data-section="tabs">
-			  <section class="section">
-			    <p class="title"><a href="#">INFO</a></p>
-			    <div class="content">
-			    	{{ product.description }}
-			    </div>
-			  </section>
-			  <section class="section">
-			    <p class="title"><a href="#">SPECIFICATIONS</a></p>
-			    <div class="content">
-			      <p><strong><span style="color: #666666;">Runs Big. If you regularly wear a half size, we recommend buying the nearest whole size down. Check our&nbsp;</span><a href="http://www.beckettsimonon.com/pages/size-guide"><span style="color: #0b5394;">size guide</span></a>.</strong><br> Nubuck leather upper.<br> Full leather lining.<br> Waxed cotton laces.<br> Tonal top-stitch detail.<br> Full-grain leather trim in the rear.<br> 3 eyelet vamp.<br> Rounded toe.<br> Stacked heel with durable rubber sole.<br> Includes a branded dust bag.<br> Heel height: 1.1"<br> Width: Medium (D)<br> Color: Camel.<br> Origin: South America.</p>
-			    </div>
-			  </section>
+			<div class="description">
+    	    	{{ product.description }}
 			</div>
+			
 			{% if product.images.size > 1 %}
-			<div class="thumbs">
-				{% for image in product.images %}
-				{% if settings.enable_product_image_zoom %}
-				<div class="image">
-				  <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'grande' }}', tint: '#ffffff'">
-				    <img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}">
-				  </a>
+				<div class="thumbs">
+					{% for image in product.images %}
+					{% if settings.enable_product_image_zoom %}
+					<div class="image">
+					  <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'grande' }}', tint: '#ffffff'">
+					    <img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+					  </a>
+					</div>
+					{% else %}
+					<div class="image">
+					  <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
+					    <img src="{{ image | product_img_url: 'compact' }}" alt="{{ image.alt | escape }}" />
+					  </a>
+					</div>
+					{% endif %}
+					{% endfor %}
 				</div>
-				{% else %}
-				<div class="image">
-				  <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
-				    <img src="{{ image | product_img_url: 'compact' }}" alt="{{ image.alt | escape }}" />
-				  </a>
-				</div>
-				{% endif %}
-				{% endfor %}
-			</div>
-			  	{% endif %}
+			<!-- End thumbnails -->
+			{% endif %}
 		</div>
 		<div class="large-6 columns">
 			{% if settings.enable_product_image_zoom %}
@@ -68,6 +62,7 @@
 					<h3 class="price">{{ product.price_min | money }}{% if product.price_min < product.compare_at_price_min %} <del>{{ product.compare_at_price_min | money }}</del>{% endif %}</h3>
 					<h6 class="label upper x-bold">-Free shipping-</h6>
 				</div>
+				<h6 class="upper">select size</h6>
 				<form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
 					<div class="product-options">
 						{% if product.options.size > 1 %}
@@ -108,57 +103,32 @@
 			
 			{% if settings.show_social %}
 			<div class="social">
-<<<<<<< HEAD
-				<ul class="panoramic share">
-					<li>
-						<span>SHARE:</span>
-					</li>
-					<li>
-						<a href="https://www.facebook.com/BeckettSimonon" title="Beckett Simonon on Facebook" class="icon-social facebook">Facebook</a>
-					</li>
-					<li>
-						<a href="https://pinterest.com/beckettsimonon/" title="Beckett Simonon on Pinterest" class="icon-social pinterest">Pinterest</a>
-					</li>
-				</ul>
+				
 			</div>
 			{% endif %}
-=======
-				<div class="row">
-					<div class="large-5 columns">
-						<div class="pinterest">
-							<a href="http://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'large' }}" class="pin-it-button" count-layout="horizontal">Pin It</a>
-							<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
-						</div>
-					</div>
-					<div class="large-7 columns">
-						<div class="facebook-like">
-							<iframe src="//www.facebook.com/plugins/like.php?href={{ shop.url }}{{ product.url }}&amp;send=false&amp;layout=button_count&amp;width=80&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:auto; height:21px;" allowTransparency="true"></iframe>
-						</div>
-					</div>
-				</div>
-			</div>
-			<script type="text/javascript">
-			  (function() {
-			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			    po.src = 'https://apis.google.com/js/plusone.js';
-			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-			  })();
-			</script>
->>>>>>> 65d7fd8cd808e94ba1af4a926a85086cf37d56cb
 		</div>
+        {% if settings.show_related_products %}
+        {% if collection and collection.products.size > 1 %}
+    		<div class="row">
+    		  <div class="large-12 columns">
+    		    <h3 class="collection-title">Related products</h3>
+    		  </div>
+    		</div> 
+    		
+    		<div class="row products">
+    		  {% for product in collection.products limit:4 %}
+    		  {% include 'product-loop' with collection.handle %}
+    		  {% endfor %}
+    		</div>
+    	{% endif %}
+    {% endif %}
 		<div class="row">
 			<div class="large-12 columns">
 				<div class="more-options">
-<<<<<<< HEAD
 					<a class="upper label round">More items to consider</a><a class="upper label light round"> read reviews</a>
 					<div recomatic="product" shop="{{shop.permanent_domain}}" product_id="{{product.id}}">
-=======
-					<!-- TODO: acabar de pulir more-optione -->
-					<a class="upper label round">More items to consider</a><a class="upper label light round"> read reviews</a>
-					<div recomatic="product" shop="erdman-emard-and-schumm3213.myshopify.com" product_id="129559735"></div>
->>>>>>> 65d7fd8cd808e94ba1af4a926a85086cf37d56cb
 				</div>
 			</div>
 		</div>
 	</div>
-{% endblock %}
+

@@ -39,10 +39,15 @@ a{
     line-height: 1;
     @include border-right-radius(6px);
     @include border-left-radius(0px);
+    height: 35px;
   }
   &.full{
     width: 100%;
   }
+  &.big{  
+    height: 35px;
+    font-size: 14px; 
+  } 
   &.white{
     background-color: #fff;
     border-color: darken(#DBC0B9, 20%);
@@ -112,8 +117,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 }
 
 .top-bar{
-  width: 50%;
-  margin:0 auto;
+  width: 100%;
+  background-color: #fff; margin:0;
   ul{
     li{
       a{
@@ -144,6 +149,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   li{
     a{
       text-transform: uppercase;
+      font-size: 1em;
     }
   }
 }
@@ -151,3 +157,4 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 .top-bar-section li a:not(.button):hover{
   background: rgb(251,251,251);
 }
+

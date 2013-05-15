@@ -1,11 +1,43 @@
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  /*top-nav*/
+/* [sass, assets/css, responsive.css] */
+@media only screen and (min-width: 58.75em) {
   .top-bar {
-    background-color: #fff;
-    margin: 0;
-    width: 100%;
+    width: 60%;
+    margin: 0 auto;
   }
 
+  .footer-wrapper .middle ul {
+    width: 78%;
+  }
+
+  ul.title-area {
+    display: none;
+  }
+
+  .first-text {
+    display: inline-block;
+  }
+
+  .footer-wrapper .first {
+    width: 39%;
+    padding-right: 5px;
+  }
+  .footer-wrapper .first ul {
+    width: 100%;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    -o-column-count: 3;
+    column-count: 3;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .buy-box {
+    width: 100%;
+    float: none;
+    max-width: 480px;
+  }
+
+  /*top-nav*/
   /*footer*/
   .footer-wrapper .first {
     width: 100%;
@@ -18,9 +50,6 @@
     -o-column-count: 2;
     column-count: 2;
   }
-  .footer-wrapper .first ul li {
-    width: 50%;
-  }
 
   .footer-wrapper .middle {
     width: 100%;
@@ -30,6 +59,9 @@
 
   .footer-wrapper .last {
     width: 100%;
+  }
+  .footer-wrapper .last h6 {
+    text-align: center;
   }
 
   .spot-1 {
